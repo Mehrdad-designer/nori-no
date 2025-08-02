@@ -1,0 +1,283 @@
+* {
+  box-sizing: border-box;
+  font-family: "tahoma";
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("Vazir.eot");
+  src: url("Vazir.eot?#iefix") format("embedded-opentype"),
+    url("Vazir.woff2") format("woff2"), url("Vazir.woff") format("woff"),
+    url("Vazir.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+body {
+  font-family: "Vazir" !important;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f9ff;
+}
+
+header {
+  background: linear-gradient(135deg, #1e88e5 0%, #64b5f6 100%);
+  color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 10px 10px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.site-slogan {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+
+.contact-number {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333 !important;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.products-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.products-title {
+  text-align: center;
+  color: #1e88e5;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(30, 136, 229, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(30, 136, 229, 0.15);
+}
+
+.product-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 2px solid #e3f2fd;
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-name {
+  color: #0d47a1;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.product-description {
+  color: #555;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.product-price {
+  color: #1e88e5;
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+footer {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.copyright {
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  header {
+    flex-direction: row;
+    padding: 1rem 2rem;
+  }
+
+  .logo-container {
+    margin-bottom: 0;
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .site-title {
+    font-size: 1.4rem;
+    text-align: right;
+  }
+
+  .site-slogan {
+    font-size: 0.85rem;
+    text-align: right;
+  }
+
+  .contact-number {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .products-title {
+    font-size: 28px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+  }
+
+  .product-image {
+    height: 200px;
+  }
+
+  .product-name {
+    font-size: 18px;
+  }
+
+  .product-description {
+    font-size: 14px;
+  }
+
+  .product-price {
+    font-size: 16px;
+  }
+
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (min-width: 992px) {
+  header {
+    padding: 1rem 3rem;
+  }
+
+  .logo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .site-title {
+    font-size: 1.5rem;
+  }
+
+  .site-slogan {
+    font-size: 0.9rem;
+  }
+
+  nav ul {
+    gap: 25px;
+  }
+
+  nav a {
+    font-size: 0.95rem;
+  }
+}
