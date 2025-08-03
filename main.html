@@ -14,9 +14,93 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
     <link rel="stylesheet" href="assets/css/stylesheetFont.css" />
+    <style>
+      .animated-header {
+        position: relative;
+        height: 600px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        font-family: "Arial", sans-serif;
+      }
+
+      .animated-header h1 {
+        font-size: 3.5rem;
+        margin-bottom: 10px;
+        z-index: 2;
+        text-shadow: 0 0 10px rgba(100, 149, 237, 0.7);
+      }
+
+      .animated-header p {
+        font-size: 1.2rem;
+        z-index: 2;
+        opacity: 0.9;
+      }
+
+      .light-bubbles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      .light-bubbles::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          circle,
+          rgba(100, 149, 237, 0.2) 0%,
+          transparent 70%
+        );
+        animation: pulse 8s infinite alternate;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(0.9);
+          opacity: 0.6;
+        }
+        100% {
+          transform: scale(1.1);
+          opacity: 1;
+        }
+      }
+
+      .bubble {
+        position: absolute;
+        background: rgba(100, 149, 237, 0.6);
+        border-radius: 50%;
+        filter: blur(5px);
+        animation: float 15s infinite linear;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) translateX(0);
+          opacity: 0.5;
+        }
+        50% {
+          transform: translateY(-100px) translateX(50px);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-200px) translateX(0);
+          opacity: 0;
+        }
+      }
+    </style>
   </head>
   <body>
-    <header class="container">
+    <header>
       <div class="logo-container">
         <div class="logo">
           <img src="assets/img/logoIndex.jpg" class="img-fluid" alt="نورینو" />
@@ -35,9 +119,16 @@
         </ul>
       </nav>
     </header>
+
+    <div class="animated-header container mt-5">
+      <div class="light-bubbles"></div>
+      <h1>نورینو</h1>
+      <p>با ما نوری نو را تجربیه کنید</p>
+    </div>
+
     <main class="container">
       <div class="products-container">
-        <div class="title text-center mb-4">
+        <div class="title text-center mb-4 mt-3">
           <h2 class="products-title mb-0">محصولات ما</h2>
           <span class="lead mt-0">با ما قیمت کف بازار را تجربه کنید</span>
         </div>
@@ -185,6 +276,21 @@
       </div>
     </footer>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const header = document.querySelector(".light-bubbles");
+        for (let i = 0; i < 20; i++) {
+          const bubble = document.createElement("div");
+          bubble.className = "bubble";
+          bubble.style.left = `${Math.random() * 100}%`;
+          bubble.style.top = `${Math.random() * 100}%`;
+          bubble.style.width = `${Math.random() * 20 + 5}px`;
+          bubble.style.height = bubble.style.width;
+          bubble.style.animationDelay = `${Math.random() * 5}s`;
+          header.appendChild(bubble);
+        }
+      });
+    </script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
