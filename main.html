@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
     <link rel="stylesheet" href="assets/css/stylesheetFont.css" />
+    <style>
+      .bg-primary {
+        background: #1e88e5 !important;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -42,8 +47,8 @@
       <p>با ما نوری نو را تجربیه کنید</p>
 
       <!-- جستجو  -->
-      <div class="search-container w-50 mt-4">
-        <form action="#" method="get">
+      <div class="search-container w-100 mt-4">
+        <form action="#" method="get" id="search-form" style="width: 750px">
           <input type="text" class="search-input" placeholder="جستجو کنید..." />
           <button class="search-button">
             <svg class="search-icon" viewBox="0 0 24 24">
@@ -58,9 +63,52 @@
 
     <main class="container">
       <div class="products-container">
-        <div class="title text-center mb-4 mt-3">
-          <h2 class="products-title mb-0">محصولات ما</h2>
-          <span class="lead mt-0">با ما قیمت کف بازار را تجربه کنید</span>
+        <div class="title text-center mb-4 mt-3 bg-dark p-3 rounded-3 row">
+          <div class="col-md-5">
+            <h2 class="products-title mb-0">محصولات ما</h2>
+            <span class="lead mt-0 text-light"
+              >با ما قیمت کف بازار را تجربه کنید</span
+            >
+          </div>
+
+          <div class="col-md-7">
+            <!-- بخش فیلتر -->
+            <div class="card filter-card">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  </span>
+                  <div class="col-md-6">
+                    <div class="row">
+                      <select
+                        class="form-select filter-select col-md-7"
+                        id="categoryFilter"
+                      >
+                        <option value="all">همه محصولات</option>
+                        <option value="electronics">لوازم الکترونیکی</option>
+                        <option value="clothing">پوشاک</option>
+                        <option value="home">لوازم خانگی</option>
+                        <option value="sports">ورزشی</option>
+                        <option value="books">کتاب و لوازم تحریر</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mt-3 mt-md-0">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                      <button class="btn btn-primary" id="applyFilter">
+                        <i class="bi bi-check-lg"></i> اعمال فیلتر
+                      </button>
+                      <button
+                        class="btn btn-outline-secondary"
+                        id="resetFilter"
+                      >
+                        <i class="bi bi-x-lg"></i> بازنشانی
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="products-grid">
