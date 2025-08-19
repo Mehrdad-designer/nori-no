@@ -93,7 +93,8 @@ body {
 
 /* جستجو */
 
-.search-container {
+.search-container,
+form {
   display: flex;
   z-index: 100;
   max-width: 800px;
