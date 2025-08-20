@@ -9,13 +9,9 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
     <link rel="stylesheet" href="assets/css/stylesheetFont.css" />
+
+    <link rel="stylesheet" href="assets/css/silder_deatil.css" />
     <style>
-      body {
-        font-family: "Segoe UI", Tahoma, sans-serif;
-        background-color: #f5f9ff;
-        margin: 0;
-        color: #333;
-      }
       .product-container {
         max-width: 1200px;
         margin: 0 auto;
@@ -155,32 +151,44 @@
         </p>
       </div>
 
-      <div class="product-content">
-        <div class="product-gallery">
-          <img
-            src="assets/img/product_img.jpg"
-            alt="لامپ لاینر"
-            class="main-image"
-          />
-          <div class="thumbnail-container">
-            <img
-              src="assets/img/product_img.jpg"
-              alt="نمونه ۱"
-              class="thumbnail"
-            />
-            <img
-              src="assets/img/product_img.jpg"
-              alt="نمونه ۲"
-              class="thumbnail"
-            />
-            <img
-              src="assets/img/product_img.jpg"
-              alt="نمونه ۳"
-              class="thumbnail"
-            />
+      <!-- slider  -->
+      <div class="slider-container mx-5 mt-3 shadow">
+        <div class="slider">
+          <div class="slide active">
+            <div class="slide-content">
+              <h2 class="text-dark">تصاویر محصولات ما</h2>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="assets/img/product_img.jpg" alt="" />
+          </div>
+
+          <div class="slide">
+            <img src="assets/img/product_img.jpg" alt="" />
+          </div>
+
+          <div class="slide">
+            <img src="assets/img/product_img.jpg" alt="" />
+          </div>
+
+          <div class="slide">
+            <img src="assets/img/product_img.jpg" alt="" />
           </div>
         </div>
 
+        <div class="indicators">
+          <span class="indicator active" onclick="goToSlide(0)"></span>
+          <span class="indicator" onclick="goToSlide(1)"></span>
+          <span class="indicator" onclick="goToSlide(2)"></span>
+          <span class="indicator" onclick="goToSlide(3)"></span>
+          <span class="indicator" onclick="goToSlide(4)"></span>
+        </div>
+
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <div class="product-content">
         <div class="product-details">
           <div class="product-code">کد محصول: LN-105</div>
           <div class="price">۲,۴۹۰,۰۰۰ تومان</div>
@@ -219,5 +227,7 @@
         <div class="copyright">تمام حقوق مادی و معنوی متعلق به نورینو است</div>
       </div>
     </footer>
+
+    <script src="assets/js/slider_detail.js"></script>
   </body>
 </html>
